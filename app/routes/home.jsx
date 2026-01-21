@@ -1,4 +1,5 @@
-import { Head, LandHeader, Footer, phone } from "../components";
+import { Head, LandHeader, Footer } from "../components";
+import { phone, PriceTable } from "../config";
 import games from "../games.json" with { type: 'json' };
 
 function Games() {
@@ -20,7 +21,7 @@ function Games() {
                 </div>
                 <div className="change__bblock">
                     <h3 className="posts__ttitle"><a href={"/game/"+game}>{info.name}</a></h3>
-                    <div className="change__description description">{info.description}</div>
+                    <div className="change__description description" dangerouslySetInnerHTML={{ __html: info.description.replace(/\n/g, '<br>') }} />
                     <a href={"/game/"+game} className="change__linck">Смотреть видео »</a>
                 </div>
             </div>);
@@ -70,57 +71,57 @@ export default function Landing() {
             <Head />
             <script src="js/wow.min.js"></script>
 		<script src="js/main.js"></script>
-		<script defer src="https://itchief.ru/examples/libs/simple-adaptive-slider/simple-adaptive-slider.min.js"></script>
-		<script dangerouslySetInnerHTML={{__html: `document.addEventListener('DOMContentLoaded', function () { 
+		<script defer src="js/simple-adaptive-slider.min.js"></script>
+		<script dangerouslySetInnerHTML={{__html: `document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider', {
 					autoplay: false,
 					interval: 5000,
 					swipe: true,
 				});
 			});
-            document.addEventListener('DOMContentLoaded', function () { 
+            document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider1', {
 					autoplay: false,
 					interval: 5000,
 					swipe: true,
 				});
 			});
-            document.addEventListener('DOMContentLoaded', function () { 
+            document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider2', {
 					autoplay: false,
 					interval: 5000,
 					swipe: true,
 				});
 			});
-			document.addEventListener('DOMContentLoaded', function () { 
+			document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider3', {
 					autoplay: false,
 					interval: 5000,
 					swipe: true,
 				});
 			});
-			document.addEventListener('DOMContentLoaded', function () { 
+			document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider4', {
 					autoplay: false,
 					interval: 5000,
 					swipe: true,
 				});
 			});
-			document.addEventListener('DOMContentLoaded', function () { 
+			document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider5', {
 					autoplay: false,
 					interval: 5000,
 					swipe: true,
 				});
 			});
-			document.addEventListener('DOMContentLoaded', function () { 
+			document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider6', {
 					autoplay: false,
 					interval: 5000,
 					swipe: true,
 				});
 			});
-			document.addEventListener('DOMContentLoaded', function () { 
+			document.addEventListener('DOMContentLoaded', function () {
 				var slider = new SimpleAdaptiveSlider('.slider7', {
 					autoplay: false,
 					interval: 5000,
@@ -128,9 +129,8 @@ export default function Landing() {
 				});
 			});
 			new WOW().init();`}} />
-		<script src="js/menugame.js"></script>
 		<script src="https://code.jquery.com/jquery-latest.js"></script>
-		<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script> 
+		<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
 		<script src="js/bp.min-form.js"></script>
 		<script src="js/main-form.js"></script>
         </head>
@@ -396,109 +396,7 @@ export default function Landing() {
                     <div className="info__info">
                         <h3 className="info__ttile info__ttile_m mintitle">Будние дни</h3>
                         <div className="info__table">
-                        <table className="table">
-                            <thead>
-                            <tr>
-                                <th> </th>
-                                <th>30 мин</th>
-                                <th>1 час</th>
-                                <th>2 часа</th>
-                                <th>3 часа</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1 шлем</td>
-                                <td>
-                                <span className="price">400р.</span>
-                                </td>
-                                <td>
-                                <span className="price">800р.</span>
-                                </td>
-                                <td>
-                                <span className="price">1600р.</span>
-                                </td>
-                                <td>
-                                <span className="price">2300</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2 шлема</td>
-                                <td>
-                                <span className="price">800р.</span>
-                                </td>
-                                <td>
-                                <span className="price">1600р.</span>
-                                </td>
-                                <td>
-                                <span className="price">3000р.</span>
-                                </td>
-                                <td>
-                                <span className="price">4400</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3 шлема</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">2300р.</span>
-                                </td>
-                                <td>
-                                <span className="price">4500р.</span>
-                                </td>
-                                <td>
-                                <span className="price">6600</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4 шлема</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">3000р.</span>
-                                </td>
-                                <td>
-                                <span className="price">5800р.</span>
-                                </td>
-                                <td>
-                                <span className="price">8500</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5 шлемов</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">3700р.</span>
-                                </td>
-                                <td>
-                                <span className="price">7200р.</span>
-                                </td>
-                                <td>
-                                <span className="price">10600</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6 шлемов</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">4400р.</span>
-                                </td>
-                                <td>
-                                <span className="price">8600р.</span>
-                                </td>
-                                <td>
-                                <span className="price">12500</span>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <PriceTable />
                         </div>
                     </div>
                     </div>

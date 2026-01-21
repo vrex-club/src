@@ -1,16 +1,6 @@
-const title = "V-rex";
-const description = "Клуб виртуальной реальности в СПб";
-const url = "http://localhost:5173";
-export const phone = "+7-911-920-30-25";
-const telegram = "v_rex_club";
-const address = "Петергофское ш. 3к.3";
-const mode = "Пн-Вс с 11:00 до 22:00";
-const vk = "clubvrex";
-const google = "https://maps.app.goo.gl/ewZJarUa1GbNRgBf7";
-const yandex = "https://yandex.ru/maps/-/CLXCbNj2";
-const email = "vrex.club@yandex.ru"
+import { title, description, url, phone, telegram, address, mode, vk, google, yandex, email } from './config';
 
-export function Head({ pageName = null} ) {
+export function Head({ pageName = null }) {
     const pageTitle = pageName == null ? title : pageName+" | "+title
     return (
     <>
@@ -277,243 +267,253 @@ export function Head({ pageName = null} ) {
 );
 }
 
-export function LandHeader() {
+function NavBar() {
     return (
-    <header id="offer">
-        <dev className="header__fon" />
-        <div className="container">
-            <div className="naw__fon">
-            <div className="naw fadeInDown animated wow">
-                <a href={url}>
-                <img
-                    src="/img/logo.png"
-                    alt="Logo"
-                    className="naw__logo"
-                />
+        <>
+        <div className="naw__fon">
+        <div className="naw fadeInDown animated wow">
+            <a href="/">
+            <img
+                src="/img/logo.png"
+                alt="Logo"
+                className="naw__logo"
+            />
+            </a>
+            <div className="naw__union">
+            <div className="naw__block">
+                <ul className="naw__menu sk">
+                <li>
+                    <a href="/#offer">Главная</a>
+                </li>
+                <li>
+                    <a href="/gallery">Фото</a>
+                </li>
+                <li className="linckgame">
+                    <a href="/#game">Игры</a>
+                    <div className="linckgame__block">
+                    <div className="linckgame__arrow" />
+                    <div className="menu-igry-container">
+                        <ul id={14} className="menu">
+                        <li
+                            //id="menu-item-1213"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1213"
+                        >
+                            <a href="/kvesty">Квесты</a>
+                        </li>
+                        <li
+                            //id="menu-item-1214"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1214"
+                        >
+                            <a href="/vy-v-razdele-horror">Horror</a>
+                        </li>
+                        <li
+                            //id="menu-item-1215"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1215"
+                        >
+                            <a href="/vy-v-razdele-gonochnykh-simulyatorov">
+                            Гоночные симуляторы
+                            </a>
+                        </li>
+                        <li
+                            //id="menu-item-1216"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1216"
+                        >
+                            <a href="/vybor-igry-multiplayer">
+                            Игры для компании
+                            </a>
+                        </li>
+                        <li
+                            //id="menu-item-1217"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1217"
+                        >
+                            <a href="/vybor-igry-hardkor">Экстрим</a>
+                        </li>
+                        <li
+                            //id="menu-item-1218"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1218"
+                        >
+                            <a href="/poznavatelnye-i-tvorchesk">
+                            Познавательные и творческие игры
+                            </a>
+                        </li>
+                        <li
+                            //id="menu-item-1219"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1219"
+                        >
+                            <a href="/games-for-all">Игры для всех</a>
+                        </li>
+                        <li
+                            //id="menu-item-1221"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1221"
+                        >
+                            <a href="/vybor-igry-dlya-detey-ot-6-let">
+                            Игры для детей
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/#price">Цены</a>
+                </li>
+                <li>
+                    <a href="#contacts">Контакты</a>
+                </li>
+                </ul>
+                <div className="naw__social sk1">
+                <a href={"whatsapp://send?phone="+phone}>
+                    <img src="/img/whatsup.png" alt="whatsapp" />
                 </a>
-                <div className="naw__union">
-                <div className="naw__block">
-                    <ul className="naw__menu sk">
-                    <li>
-                        <a href="/#offer">Главная</a>
-                    </li>
-                    <li>
-                        <a href="/gallery">Фото</a>
-                    </li>
-                    <li className="linckgame">
-                        <a href="/#game">Игры</a>
-                        <div className="linckgame__block">
-                        <div className="linckgame__arrow" />
-                        <div className="menu-igry-container">
-                            <ul id={14} className="menu">
-                            <li
-                                id="menu-item-1213"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1213"
-                            >
-                                <a href="/kvesty">Квесты</a>
-                            </li>
-                            <li
-                                id="menu-item-1214"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1214"
-                            >
-                                <a href="/vy-v-razdele-horror">Horror</a>
-                            </li>
-                            <li
-                                id="menu-item-1215"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1215"
-                            >
-                                <a href="/vy-v-razdele-gonochnykh-simulyatorov">
-                                Гоночные симуляторы
+                <a href={"https://t.me/"+telegram}>
+                    <img src="/img/telegram.png" alt="telegram" />
+                </a>
+                </div>
+            </div>
+            <div className="naw__block ">
+                <a href="#" className="naw__adress sk2">
+                {address}
+                </a>
+                <div className="naw__clock sk2">{mode}</div>
+                <a href={"tel:"+phone} className="naw__phone sk3">
+                {phone}
+                </a>
+            </div>
+            </div>
+            <a href="#" className="mobile_menu skk">
+            <span />
+            <span />
+            <span />
+            </a>
+            {/* <button data-toggle="modal" className="btn" data-target="#callback">
+            Обратный звонок
+            </button> */}
+        </div>
+        </div>
+        <div className="naw__mobile">
+        <div className="menumobile">
+            <div className="header__menu_tel ">
+            <div className="mobile_menu_container">
+                <div className="mobile_menu_content">
+                <div className="mobile_menu_container">
+                    <div className="mobile_menu_content">
+                    <div className="mobile_menu_content_title">Меню</div>
+                    <div className="mobile_menu_content_menu">
+                        <div className="menu-pervoe-menyu-container">
+                        <div className="menu-glavnoe-v-shapke-container">
+                            <ul className="menu">
+                            <li>
+                                <a
+                                href="/#offer"
+                                className="mobilelink"
+                                >
+                                Главная
                                 </a>
                             </li>
-                            <li
-                                id="menu-item-1216"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1216"
-                            >
-                                <a href="/vybor-igry-multiplayer">
-                                Игры для компании
+                            <li>
+                                <a
+                                href="/gallery"
+                                className="mobilelink"
+                                >
+                                Фото
                                 </a>
                             </li>
-                            <li
-                                id="menu-item-1217"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1217"
-                            >
-                                <a href="/vybor-igry-hardkor">Экстрим</a>
+                            <li>
+                                <a href="#" className="parent">
+                                Игры
+                                </a>
+                                <ul>
+                                <li>
+                                    <a href="#" className="back" />
+                                </li>
+                                <div className="menu-igry-container">
+                                    <div id="menu-igry" className="menu">
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1213">
+                                        <a href="/kvesty">Квесты</a>
+                                    </li>
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1214">
+                                        <a href="/vy-v-razdele-horror">
+                                        Horror
+                                        </a>
+                                    </li>
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1215">
+                                        <a href="/vy-v-razdele-gonochnykh-simulyatorov">
+                                        Гоночные симуляторы
+                                        </a>
+                                    </li>
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1216">
+                                        <a href="/vybor-igry-multiplayer">
+                                        Игры для компании
+                                        </a>
+                                    </li>
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1217">
+                                        <a href="/vybor-igry-hardkor">
+                                        Экстрим
+                                        </a>
+                                    </li>
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1218">
+                                        <a href="poznavatelnye-i-tvorchesk">
+                                        Познавательные и творческие игры
+                                        </a>
+                                    </li>
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1219">
+                                        <a href="/games-for-all">
+                                        Игры для всех
+                                        </a>
+                                    </li>
+                                    <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1221">
+                                        <a href="/vybor-igry-dlya-detey-ot-6-let">
+                                        Игры для детей
+                                        </a>
+                                    </li>
+                                    </div>
+                                </div>
+                                </ul>
                             </li>
-                            <li
-                                id="menu-item-1218"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1218"
-                            >
-                                <a href="/poznavatelnye-i-tvorchesk">
-                                Познавательные и творческие игры
+                            <li>
+                                <a
+                                href="/#price"
+                                className="mobilelink"
+                                >
+                                Цены
                                 </a>
                             </li>
-                            <li
-                                id="menu-item-1219"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1219"
-                            >
-                                <a href="/games-for-all">Игры для всех</a>
-                            </li>
-                            <li
-                                id="menu-item-1221"
-                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1221"
-                            >
-                                <a href="/vybor-igry-dlya-detey-ot-6-let">
-                                Игры для детей
+                            <li>
+                                <a
+                                href="/#contacts"
+                                className="mobilelink"
+                                >
+                                Контакты
                                 </a>
                             </li>
                             </ul>
                         </div>
                         </div>
-                    </li>
-                    <li>
-                        <a href="#price">Цены</a>
-                    </li>
-                    <li>
-                        <a href="#contacts">Контакты</a>
-                    </li>
-                    </ul>
-                    <div className="naw__social sk1">
-                    <a href={"whatsapp://send?phone="+phone}>
-                        <img src="/img/whatsup.png" alt="whatsapp" />
-                    </a>
-                    <a href={"https://t.me/"+telegram}>
-                        <img src="/img/telegram.png" alt="telegram" />
-                    </a>
                     </div>
-                </div>
-                <div className="naw__block ">
-                    <a href="#" className="naw__adress sk2">
-                    {address}
+                    <a href={"tel:"+phone} className="naw__phone">
+                        {phone}
                     </a>
-                    <div className="naw__clock sk2">{mode}</div>
-                    <a href={"tel:"+phone} className="naw__phone sk3">
-                    {phone}
-                    </a>
-                </div>
-                </div>
-                <a href="#" className="mobile_menu skk">
-                <span />
-                <span />
-                <span />
-                </a>
-                {/* <button data-toggle="modal" className="btn" data-target="#callback">
-                Обратный звонок
-                </button> */}
-            </div>
-            </div>
-            <div className="naw__mobile">
-            <div className="menumobile">
-                <div className="header__menu_tel ">
-                <div className="mobile_menu_container">
-                    <div className="mobile_menu_content">
-                    <div className="mobile_menu_container">
-                        <div className="mobile_menu_content">
-                        <div className="mobile_menu_content_title">Меню</div>
-                        <div className="mobile_menu_content_menu">
-                            <div className="menu-pervoe-menyu-container">
-                            <div className="menu-glavnoe-v-shapke-container">
-                                <ul className="menu">
-                                <li>
-                                    <a
-                                    href="/index.html#offer"
-                                    className="mobilelink"
-                                    >
-                                    Главная
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                    href="/gallery/index.html"
-                                    className="mobilelink"
-                                    >
-                                    Фото
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" className="parent">
-                                    Игры
-                                    </a>
-                                    <ul>
-                                    <li>
-                                        <a href="#" className="back" />
-                                    </li>
-                                    <div className="menu-igry-container">
-                                        <div id="menu-igry" className="menu">
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1213">
-                                            <a href="/kvesty">Квесты</a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1214">
-                                            <a href="/vy-v-razdele-horror">
-                                            Horror
-                                            </a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1215">
-                                            <a href="/vy-v-razdele-gonochnykh-simulyatorov">
-                                            Гоночные симуляторы
-                                            </a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1216">
-                                            <a href="/vybor-igry-multiplayer">
-                                            Игры для компании
-                                            </a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1217">
-                                            <a href="/vybor-igry-hardkor">
-                                            Экстрим
-                                            </a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1218">
-                                            <a href="poznavatelnye-i-tvorchesk">
-                                            Познавательные и творческие игры
-                                            </a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1219">
-                                            <a href="/games-for-all">
-                                            Игры для всех
-                                            </a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1221">
-                                            <a href="/vybor-igry-dlya-detey-ot-6-let">
-                                            Игры для детей
-                                            </a>
-                                        </li>
-                                        </div>
-                                    </div>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a
-                                    href="#price"
-                                    className="mobilelink"
-                                    >
-                                    Цены
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                    href="#contacts"
-                                    className="mobilelink"
-                                    >
-                                    Контакты
-                                    </a>
-                                </li>
-                                </ul>
-                            </div>
-                            </div>
-                        </div>
-                        <a href={"tel:"+phone} className="naw__phone">
-                            {phone}
-                        </a>
-                        </div>
-                    </div>
-                    <div className="mobile_menu_overlay" />
                     </div>
                 </div>
                 <div className="mobile_menu_overlay" />
                 </div>
             </div>
+            <div className="mobile_menu_overlay" />
             </div>
+        </div>
+        </div>
+        <script src="/js/menu.js" />
+        <script src="/js/menugame.js"></script>
+        </>
+    )
+}
+
+export function LandHeader() {
+    return (
+    <header id="offer">
+        <div className="header__fon" />
+        <div className="container">
+            <NavBar />
             <div className="offer">
             <h1 className="offer__title fadeInDown animated wow">
                 Клуб виртуальной реальности
@@ -527,6 +527,16 @@ export function LandHeader() {
             </div>
           </div>
           <script src="/js/menu.js" />
+        </header>
+    );
+}
+
+export function Header() {
+    return (
+        <header id="offer">
+            <div className="container">
+                <NavBar />
+            </div>
         </header>
     );
 }
