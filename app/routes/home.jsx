@@ -27,7 +27,7 @@ function Games() {
             </div>);
         });
         tabs.push(<div className="tab" key={tab.id}>
-            <input type="radio" id={"tab"+id} name="tab-group" defaultChecked={tab.id == "for-everyone"} />
+            <input type="radio" id={"tab"+id} name="tab-group" defaultChecked={tab.id === "for-everyone"} />
 			<label htmlFor={"tab"+id} className="tab-title">{tab.name}</label>
             <section className="tab-content">
                 <div className="change__info">
@@ -129,8 +129,7 @@ export default function Landing() {
 				});
 			});
 			new WOW().init();`}} />
-		<script src="https://code.jquery.com/jquery-latest.js"></script>
-		<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+		{/* <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>*/}
 		<script src="js/bp.min-form.js"></script>
 		<script src="js/main-form.js"></script>
         </head>

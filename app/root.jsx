@@ -5,8 +5,8 @@ import {
 
 export function Layout({ children }) {
   return (
-    <html lang="ru">
-      {children}
+    <html dir="ltr" lang="ru-RU" prefix="og: https://ogp.me/ns#">
+        {children}
     </html>
   );
 }

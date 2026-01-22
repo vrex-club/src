@@ -4,7 +4,7 @@ export default {
     // Config options...
     // Server-side render by default, to enable SPA mode set this to `false`
     async prerender() {
-        let urls = ['/'/* , '/404.html', '/gallery' */];
+        let urls = ['/'/* , '/gallery' */];
         Object.keys(games.games).forEach(key => {
             urls.push(`/game/${key}`);
         });
