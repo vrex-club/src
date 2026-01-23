@@ -1,5 +1,5 @@
 import { Head, LandHeader, Footer } from "../components";
-import { phone, PriceTable } from "../config";
+import { certhour, phone, title, WeekdayPriceTable, WeekendPriceTable } from "../config";
 import games from "../games.json" with { type: 'json' };
 
 function Games() {
@@ -140,7 +140,7 @@ export default function Landing() {
                 <div className="section__header">
                     <h2 className="about__about fadeInDown animated wow">
                     <div className="beforetitle">Клуб</div>
-                    Клуб виртуальной<span>реальности V-Rex</span>
+                    Клуб виртуальной<span>реальности {title}</span>
                     </h2>
                     <div className="section__description fadeInDown animated wow"></div>
                 </div>
@@ -395,7 +395,7 @@ export default function Landing() {
                     <div className="info__info">
                         <h3 className="info__ttile info__ttile_m mintitle">Будние дни</h3>
                         <div className="info__table">
-                        <PriceTable />
+                        <WeekdayPriceTable />
                         </div>
                     </div>
                     </div>
@@ -405,109 +405,7 @@ export default function Landing() {
                         Выходные дни
                         </h3>
                         <div className="info__table">
-                        <table className="table">
-                            <thead>
-                            <tr>
-                                <th> </th>
-                                <th>30 мин</th>
-                                <th>1 час</th>
-                                <th>2 часа</th>
-                                <th>3 часа</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1 шлем</td>
-                                <td>
-                                <span className="price">500р.</span>
-                                </td>
-                                <td>
-                                <span className="price">1000р.</span>
-                                </td>
-                                <td>
-                                <span className="price">2000р.</span>
-                                </td>
-                                <td>
-                                <span className="price">2900</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 2 шлема</td>
-                                <td>
-                                <span className="price">1000р.</span>
-                                </td>
-                                <td>
-                                <span className="price">2000р.</span>
-                                </td>
-                                <td>
-                                <span className="price">3800р.</span>
-                                </td>
-                                <td>
-                                <span className="price">5500</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3 шлема</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">2900р.</span>
-                                </td>
-                                <td>
-                                <span className="price">5600р.</span>
-                                </td>
-                                <td>
-                                <span className="price">8200</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4 шлема</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">3800р.</span>
-                                </td>
-                                <td>
-                                <span className="price">7400р.</span>
-                                </td>
-                                <td>
-                                <span className="price">10900</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5 шлемов</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">4700р.</span>
-                                </td>
-                                <td>
-                                <span className="price">9000р.</span>
-                                </td>
-                                <td>
-                                <span className="price">13000</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6 шлемов</td>
-                                <td>
-                                <span className="price" />
-                                </td>
-                                <td>
-                                <span className="price">5600р.</span>
-                                </td>
-                                <td>
-                                <span className="price">10500р.</span>
-                                </td>
-                                <td>
-                                <span className="price">15000</span>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <WeekendPriceTable />
                         </div>
                     </div>
                     </div>
@@ -545,7 +443,7 @@ export default function Landing() {
                     <div className="info__blockinfo_description description">
                         На любое количество часов игры
                     </div>
-                    <h3 className="info__blockinfo_salas mintitle">1000 руб. за час </h3>
+                        <h3 className="info__blockinfo_salas mintitle">{certhour}</h3>
                     </div>
                 </div>
                 </div>

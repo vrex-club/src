@@ -239,7 +239,7 @@ export default function Game({ loaderData }) {
                                 <div className="gamepost__foto">
                                     <div className="post-thumbnail">
                                     <img
-                                        fetchpriority="high"
+                                        fetchPriority="high"
                                         src={loaderData.thumb}
                                         // className="attachment-twentyfourteen-full-width size-twentyfourteen-full-width wp-post-image"
                                         alt=""
