@@ -1,5 +1,5 @@
 import { Head, Header, Footer } from "../components";
-import { phone } from "../config";
+import { vk } from "../config";
 
 export default function Gallery() {
     return (
@@ -23,10 +23,7 @@ export default function Gallery() {
                     Сайт временно на реконструкции, приносим свои извинения.
                     <br />
                     <br />
-                    Вы можете обратиться по всем вопросам по телефону:{" "}
-                    <a href={`tel:${phone}`} style={{ color: "#0693e3" }}>
-                      {phone}
-                    </a>
+                    Вы можете посмотреть фото на <a href={`https://vk.com/${vk}`} style={{color: '#0693e3'}}>нашей странице ВКонтакте</a>
                   </p>
                 </div>
               </div>

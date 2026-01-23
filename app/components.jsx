@@ -1,5 +1,5 @@
 import { title, description, url, phone, telegram, address, mode, vk, google, yandex, email, ymap } from './config';
-import { category } from './games.json'
+import { category } from './games.json' with {"type": "json"}
 
 export function Head({ pageName = null }) {
     const pageTitle = pageName === null ? title : pageName+" | "+title
@@ -315,7 +315,7 @@ function NavBar() {
                     <a href="/#price">Цены</a>
                 </li>
                 <li>
-                    <a href="#contacts">Контакты</a>
+                    <a href="/#contacts">Контакты</a>
                 </li>
                 </ul>
                 <div className="naw__social sk1">
@@ -641,19 +641,19 @@ export function Footer() {
                   id="menu-item-12"
                   className="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-12"
                 >
-                  <a href="#gobooking">Забронировать игру</a>
+                  <a href="/#gobooking">Забронировать игру</a>
                 </li>
                 <li
                   id="menu-item-13"
                   className="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-13"
                 >
-                  <a href="#game">Выбери игру</a>
+                  <a href="/#game">Выбери игру</a>
                 </li>
                 <li
                   id="menu-item-14"
                   className="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-14"
                 >
-                  <a href="#contacts">Контакты</a>
+                  <a href="/#contacts">Контакты</a>
                 </li>
               </ul>
             </div>
@@ -663,7 +663,7 @@ export function Footer() {
                   id="menu-item-1245"
                   className="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1245"
                 >
-                  <a href="#offer">Узнай о нас подробнее</a>
+                  <a href="/#offer">Узнай о нас подробнее</a>
                 </li>
                 <li
                   id="menu-item-1246"

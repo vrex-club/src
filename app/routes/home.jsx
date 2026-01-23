@@ -1,5 +1,5 @@
 import { Head, LandHeader, Footer } from "../components";
-import { certhour, phone, title, WeekdayPriceTable, WeekendPriceTable } from "../config";
+import { book, certhour, phone, title, WeekdayPriceTable, WeekendPriceTable } from "../config";
 import games from "../games.json" with { type: 'json' };
 
 function Games() {
@@ -469,7 +469,7 @@ export default function Landing() {
                     </div>
                 </div>
                 <div className="booking__block fadeInDown animated wow">
-    <iframe src="https://api.v-rex.club/vrex" width="100%" id="book-iframe" style={{ border: "none", display: "block", width: "100%" }} />
+    <iframe src={book} width="100%" id="book-iframe" style={{ border: "none", display: "block", width: "100%" }} />
                     <script type="module" dangerouslySetInnerHTML={{ __html: `
     import { initialize } from "https://cdn.jsdelivr.net/npm/@open-iframe-resizer/core@latest/dist/index.js";
 

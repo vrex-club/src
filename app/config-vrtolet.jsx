@@ -12,6 +12,7 @@ export const email = "vrvbg@yandex.ru";
 export const ymap =
   "https://yandex.ru/map-widget/v1/?ll=28.750326%2C60.708326&mode=search&oid=211841513199&ol=biz&sctx=ZAAAAAgBEAAaKAoSCTBK0F%2Fo3T1AEdHLKJZb8E1AEhIJh1EQPL692D8Rofgx5q4lxD8iBgABAgMEBSgKOABAyQdIAWoCcnWdAc3MzD2gAQCoAQC9AZAXcpXCAQbv7fOVlQaCAh3QstC10YDRgtC%2B0LvQtdGCINCy0YvQsdC%2B0YDQs4oCAJICAzk2OZoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=28.750326%2C60.708326&sspn=0.004183%2C0.001660&text=%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D0%BB%D0%B5%D1%82%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%B3&z=18.53";
 export const certhour = "800 руб. за час";
+export const book = "https://api.v-rex.club/vrtolet";
 
 export function WeekdayPriceTable() {
   return (
