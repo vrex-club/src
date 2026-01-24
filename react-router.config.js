@@ -1,4 +1,4 @@
-import games from './app/games.json' with { type: 'json' };
+import games from './app/games'
 
 export default {
     // Config options...
