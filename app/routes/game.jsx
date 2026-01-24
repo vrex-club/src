@@ -1,5 +1,5 @@
 import { Head, Header, Footer } from "../components";
-import games from "../games.json" with { type: "json" }
+import games from "../games";
 
 export async function loader({ params }) {
     const game = games.games[params.game];

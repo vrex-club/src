@@ -1,6 +1,7 @@
 import { Head, LandHeader, Footer } from "../components";
 import { book, certhour, phone, title, WeekdayPriceTable, WeekendPriceTable } from "../config";
-import games from "../games.json" with { type: 'json' };
+import games from "../games";
+import { assets } from "../brand";
 
 function Games() {
     let tabs = [];
@@ -149,7 +150,7 @@ export default function Landing() {
                     <div className="rotatefoto__union">
                         <div className="rotatefoto__block"></div>
                         <img
-                        src="/img/logo-block2.png"
+                        src={assets.logoBlock2}
                         id="page-preloader"
                         className="circle animated offer-pic"
                         alt="Logo"

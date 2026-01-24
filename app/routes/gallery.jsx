@@ -1,10 +1,11 @@
 import { Head, Header, Footer } from "../components";
 import { title } from "../config";
+import { brand } from "../brand";
 
 export async function loader() {
     const fs = await import("node:fs/promises");
     const path = await import("node:path");
-    const galleryDir = path.resolve(process.cwd(), "public/content/uploads/photo-gallery");
+    const galleryDir = path.resolve(process.cwd(), `public/content/uploads/${brand}-gallery`);
 
     try {
         const entries = await fs.readdir(galleryDir, { withFileTypes: true });
@@ -177,12 +178,12 @@ export default function GalleryComponent({ loaderData }) {
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js" />
             </head>
             <Header />
-            <section class="pageinfo fadeInDown  wow animated" style={{visibility: 'visible', animationName: 'fadeInDown'}}>
+            <section className="pageinfo fadeInDown  wow animated" style={{visibility: 'visible', animationName: 'fadeInDown'}}>
                 <div className="header__fon111" />
-                <div class="container">
+                <div className="container">
                     <h1 style={{ marginBottom: '20px' }}>Галерея | {title}</h1>
-                    <div id="nanogallery2" class="pageinfo__content" data-nanogallery2='{
-                            "itemsBaseURL": "/content/uploads/photo-gallery/",
+                    <div id="nanogallery2" className="pageinfo__content" data-nanogallery2={`{
+                            "itemsBaseURL": "/content/uploads/${brand}-gallery/",
                             "thumbnailWidth": "auto",
                             "thumbnailBorderVertical": 0,
                             "thumbnailBorderHorizontal": 0,
@@ -192,9 +193,9 @@ export default function GalleryComponent({ loaderData }) {
                             },
                             "thumbnailAlignment": "center",
                             "thumbnailOpenImage": true
-                          }'>
+                        }`}>
                         {loaderData.map((file) => (
-                            <a href={file} data-ngthumb={`thumb/${file}`} key={file} />
+                            <a href={file} data-ngthumb={file} key={file} />
                         ))}
                     </div>
                 </div>

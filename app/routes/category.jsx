@@ -1,6 +1,6 @@
 import { Head, Header, Footer } from "../components";
 import { title } from "../config";
-import { category, games } from "../games.json" with { type: "json" }
+import games, { category } from "../games";
 
 export async function loader({ params }) {
     for (const cat of category) {
@@ -277,7 +277,7 @@ header:after {
 `;
     const categoryGames = [];
     loaderData.games.forEach((_game) => {
-        const game = games[_game];
+        const game = games.games[_game];
         categoryGames.push(
             <div key={_game} className="item">
                 {/* skin flat"> */}

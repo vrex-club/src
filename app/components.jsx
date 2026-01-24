@@ -1,5 +1,6 @@
-import { title, description, url, phone, telegram, address, mode, vk, google, yandex, email, ymap } from './config';
-import { category } from './games.json' with {"type": "json"}
+import { title, description, url, phone, telegram, address, mode, vk, google, yandex, email, ymap } from "./config";
+import { category } from "./games";
+import { assets } from "./brand";
 
 export function Head({ pageName = null }) {
     const pageTitle = pageName === null ? title : pageName+" | "+title
@@ -280,7 +281,7 @@ function NavBar() {
         <div className="naw fadeInDown animated wow">
             <a href="/">
             <img
-                src="/img/logo.png"
+                src={assets.logo}
                 alt="Logo"
                 className="naw__logo"
             />
@@ -631,7 +632,7 @@ export function Footer() {
           </div>
           <div className="footeriteamblock fadeInDown animated wow">
             <img
-              src="/img/lofo-footer.png"
+              src={assets.footerLogo}
               alt="Лого в низу сайта"
               className="footeriteamblock__logo"
             />
@@ -675,7 +676,7 @@ export function Footer() {
                   id="menu-item-1247"
                   className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1247"
                 >
-                  <a href="/games-for-all">Игры для всех</a>
+                  <a href="/category/for-everyone">Игры для всех</a>
                 </li>
               </ul>
             </div>{" "}

@@ -11,7 +11,115 @@ export const yandex = "https://yandex.ru/maps/-/CLXCbNj2";
 export const email = "vrex.club@yandex.ru"
 export const ymap = "https://yandex.ru/map-widget/v1/?ll=30.208339%2C59.846813&mode=search&oid=18233034946&ol=biz&sctx=ZAAAAAgBEAAaKAoSCZj5Dn7iOD5AEdwvn6wY7E1AEhIJtDnObcK9yD8RxZCcTNwqtD8iBgABAgMEBSgKOABAvq4HSAFqAnJ1nQHNzMw9oAEAqAEAvQEDM45fwgEFwpGY9kOCAgV2LXJleIoCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=30.208339%2C59.846813&sspn=0.008905%2C0.003629&text=v-rex&z=17.44";
 export const certhour = "1000 руб. за час";
-export const book = "https://api.v-rex.club/vrtolet";
+export const book = "https://api.v-rex.club/vrex";
+
+export function WeekdayPriceTable() {
+    return (
+        <table className="table">
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>30 мин</th>
+                    <th>1 час</th>
+                    <th>2 часа</th>
+                    <th>3 часа</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 шлем</td>
+                    <td>
+                        <span className="price">400р.</span>
+                    </td>
+                    <td>
+                        <span className="price">800р.</span>
+                    </td>
+                    <td>
+                        <span className="price">1600р.</span>
+                    </td>
+                    <td>
+                        <span className="price">2300</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2 шлема</td>
+                    <td>
+                        <span className="price">800р.</span>
+                    </td>
+                    <td>
+                        <span className="price">1600р.</span>
+                    </td>
+                    <td>
+                        <span className="price">3000р.</span>
+                    </td>
+                    <td>
+                        <span className="price">4400</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3 шлема</td>
+                    <td>
+                        <span className="price" />
+                    </td>
+                    <td>
+                        <span className="price">2300р.</span>
+                    </td>
+                    <td>
+                        <span className="price">4500р.</span>
+                    </td>
+                    <td>
+                        <span className="price">6600</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4 шлема</td>
+                    <td>
+                        <span className="price" />
+                    </td>
+                    <td>
+                        <span className="price">3000р.</span>
+                    </td>
+                    <td>
+                        <span className="price">5800р.</span>
+                    </td>
+                    <td>
+                        <span className="price">8500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5 шлемов</td>
+                    <td>
+                        <span className="price" />
+                    </td>
+                    <td>
+                        <span className="price">3700р.</span>
+                    </td>
+                    <td>
+                        <span className="price">7200р.</span>
+                    </td>
+                    <td>
+                        <span className="price">10600</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6 шлемов</td>
+                    <td>
+                        <span className="price" />
+                    </td>
+                    <td>
+                        <span className="price">4400р.</span>
+                    </td>
+                    <td>
+                        <span className="price">8600р.</span>
+                    </td>
+                    <td>
+                        <span className="price">12500</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    );
+}
 
 export function WeekendPriceTable() {
     return (

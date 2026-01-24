@@ -1,0 +1,83 @@
+name: Deploy branded builds
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build vrex
+        run: npm run build
+        env:
+          VITE_BRAND: vrex
+
+      - name: Save vrex build
+        run: |
+          rm -rf /tmp/build-vrex
+          mkdir -p /tmp/build-vrex
+          cp -R build/client/. /tmp/build-vrex/
+
+      - name: Build vrtolet
+        run: npm run build
+        env:
+          VITE_BRAND: vrtolet
+
+      - name: Save vrtolet build
+        run: |
+          rm -rf /tmp/build-vrtolet
+          mkdir -p /tmp/build-vrtolet
+          cp -R build/client/. /tmp/build-vrtolet/
+
+      - name: Configure deploy key
+        run: |
+          mkdir -p ~/.ssh
+          touch ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Deploy vrex
+        run: |
+          echo "${{ secrets.VREX_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          set -euo pipefail
+          cd /tmp/build-vrex
+          echo "v-rex.club" > CNAME
+          git init
+          git checkout -b main
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git add -A
+          git commit -m "Deploy vrex (${GITHUB_SHA})"
+          git remote add origin git@github.com:vrex-club/vrex-deploy.git
+          GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
+            git push -f origin main
+
+      - name: Deploy vrtolet
+        run: |
+          echo "${{ secrets.VRT_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          set -euo pipefail
+          cd /tmp/build-vrtolet
+          echo "vrtolet.ru" > CNAME
+          git init
+          git checkout -b main
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git add -A
+          git commit -m "Deploy vrtolet (${GITHUB_SHA})"
+          git remote add origin git@github.com:vrex-club/vrtolet-deploy.git
+          GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
+            git push -f origin main
