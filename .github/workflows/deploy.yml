@@ -56,8 +56,9 @@ jobs:
           set -euo pipefail
           cd /tmp/build-vrex
           echo "v-rex.club" > CNAME
-          git init
-          git checkout -b main
+          git clone git@github.com:vrex-club/vrex-deploy.git --no-checkout --filter=blob:none
+          mv vrex-deploy/.git .
+          rm -rf vrex-deploy
           git config user.email "actions@github.com"
           git config user.name "github-actions"
           git add -A
@@ -72,8 +73,9 @@ jobs:
           set -euo pipefail
           cd /tmp/build-vrtolet
           echo "vrtolet.ru" > CNAME
-          git init
-          git checkout -b main
+          git clone git@github.com:vrex-club/vrtolet-deploy.git --no-checkout --filter=blob:none
+          mv vrtolet-deploy/.git .
+          rm -rf vrtolet-deploy
           git config user.email "actions@github.com"
           git config user.name "github-actions"
           git add -A
