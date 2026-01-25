@@ -62,10 +62,13 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "github-actions"
           git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy for vrex."
+            exit 0
+          fi
           git commit -m "Deploy vrex (${GITHUB_SHA})"
-          git remote add origin git@github.com:vrex-club/vrex-deploy.git
           GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
-            git push -f origin main
+            git push
 
       - name: Deploy vrtolet
         run: |
@@ -79,7 +82,10 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "github-actions"
           git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy for vrtolet."
+            exit 0
+          fi
           git commit -m "Deploy vrtolet (${GITHUB_SHA})"
-          git remote add origin git@github.com:vrex-club/vrtolet-deploy.git
           GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
-            git push -f origin main
+            git push
