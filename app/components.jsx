@@ -1,6 +1,7 @@
 import { title, description, url, phone, telegram, address, mode, vk, google, yandex, email, ymap } from "./config";
 import { category } from "./games";
 import { assets } from "./brand";
+import { useLocation } from "react-router";
 
 export function Head({ pageName = null }) {
     const pageTitle = pageName === null ? title : pageName+" | "+title
@@ -275,6 +276,7 @@ export function Head({ pageName = null }) {
 }
 
 function NavBar() {
+    const location = useLocation().pathname;
     return (
         <>
         <div className="naw__fon">
@@ -297,7 +299,7 @@ function NavBar() {
                 </li>
                 <li className="linckgame">
                     <a href="/#game">Игры</a>
-                    <div className="linckgame__block">
+                    <div className="linckgame__block menublock">
                     <div className="linckgame__arrow" />
                     <div className="menu-igry-container">
                         <ul id={14} className="menu">
@@ -329,9 +331,29 @@ function NavBar() {
                 </div>
             </div>
             <div className="naw__block ">
-                <a href="#" className="naw__adress sk2">
-                {address}
-                </a>
+                <div className="addresslink" style={{position: "relative"}}>
+                    <a href="#" className="naw__adress sk3" style={{fontFamily: "'Oswald', sans-serif"}}>
+                    {address}
+                    <svg style={{marginLeft: '5px', paddingTop: '3px', height: "20px"}} width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.1211 0.804691C18.5379 0.402229 19.2096 0.393186 19.627 0.810551C20.0193 1.20292 20.0358 1.82154 19.6924 2.24121L19.6191 2.32227L11.0176 10.9316C10.8365 11.1127 10.6075 11.2147 10.3682 11.2373L10.2656 11.2422H10.1719C9.90757 11.2422 9.6292 11.1409 9.41992 10.9316L0.804689 2.31641C0.402227 1.89957 0.393184 1.22792 0.810549 0.810551L0.816408 0.804691C1.23324 0.402229 1.9049 0.393185 2.32227 0.810551L10.2188 8.70704L18.1211 0.804691Z" fill="white" stroke="white"/>
+                    </svg>
+                    </a>
+                    <div className="addresslink__block menublock" style={{width: "235px"}}>
+                        <div className="linckgame__arrow" />
+                        <ul className="menu">
+                            <li className="menu-item menu-item-type-post_type menu-item-object-page">
+                                <a href={`https://v-rex.club${location}`}>
+                                    Петергофское ш. 3к.3
+                                </a>
+                            </li>
+                            <li className="menu-item menu-item-type-post_type menu-item-object-page">
+                                <a href={`https://buda.v-rex.club${location}`}>
+                                    Будапештская ул. 49к.1
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div className="naw__clock sk2">{mode}</div>
                 <a href={"tel:"+phone} className="naw__phone sk3">
                 {phone}
@@ -420,6 +442,30 @@ function NavBar() {
                     <a href={"tel:"+phone} className="naw__phone">
                         {phone}
                     </a>
+                    <div>
+                    <a href="#" className="naw__adress parent">
+                    {address}
+                    </a>
+                    <ul className="addresschooser">
+                    <li>
+                        <a href="#" className="back" />
+                    </li>
+                    <div className="menu-igry-container">
+                        <div className="menu">
+                            <li className="menu-item menu-item-type-post_type menu-item-object-page">
+                                <a href={`https://v-rex.club${location}`}>
+                                    Петергофское ш. 3к.3
+                                </a>
+                            </li>
+                            <li className="menu-item menu-item-type-post_type menu-item-object-page">
+                                <a href={`https://buda.v-rex.club${location}`}>
+                                    Будапештская ул. 49к.1
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    </ul>
+                    </div>
                     </div>
                 </div>
                 <div className="mobile_menu_overlay" />
@@ -430,7 +476,7 @@ function NavBar() {
         </div>
         </div>
         <script src="/js/menu.js" />
-        <script src="/js/menugame.js"></script>
+        <script src="/js/menugame.js" />
         </>
     )
 }
@@ -681,7 +727,7 @@ export function Footer() {
               </ul>
             </div>{" "}
             <div className="footeriteamblock__description description">
-              All Right Reserved © 2025 «{title}» — клуб виртуальной реальности
+              All Right Reserved © 2026 «{title}» — клуб виртуальной реальности
               <div className="footeriteamblock__social">
                 <a href="https://www.instagram.com/vrexclub/">
                   <img src="/img/instagram.png" alt="instagram" />

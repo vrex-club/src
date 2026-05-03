@@ -1,6 +1,6 @@
-function allGame() {
-    const btn = document.querySelector('.linckgame');
-    const blockGame = document.querySelector('.linckgame__block');
+function allGame(query) {
+    const btn = document.querySelector(`.${query}`);
+    const blockGame = document.querySelector(`.${query}__block`);
     btn.addEventListener("mouseover", () => {
         blockGame.style.display = 'block';
     });
@@ -9,7 +9,8 @@ function allGame() {
     });
 
 }
-allGame();
+allGame('linckgame');
+allGame('addresslink')
 
 function hideButtonCall() {
     const btn = document.querySelector('.mobile_menu_container ul li a.parent');
@@ -23,4 +24,4 @@ function hideButtonCall() {
     });
 
 }
-hideButtonCall();
+//hideButtonCall();

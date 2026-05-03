@@ -22,10 +22,15 @@ const brands = {
         key: "vrtolet",
         config: vrtoletConfig,
         games: vrtoletGames,
+        // assets: {
+        //     logo: "/img/logo-vrt.png",
+        //     logoBlock2: "/img/logo-block2-vrt.png",
+        //     footerLogo: "/img/logo-footer-vrt.png",
+        // },
         assets: {
-            logo: "/img/logo-vrt.png",
-            logoBlock2: "/img/logo-block2-vrt.png",
-            footerLogo: "/img/logo-footer-vrt.png",
+            logo: "/img/logo-vrex.png",
+            logoBlock2: "/img/logo-block2-vrex.png",
+            footerLogo: "/img/lofo-footer-vrex.png",
         },
     },
 };

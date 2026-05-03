@@ -69,3 +69,23 @@ jobs:
           git commit -m "Deploy vrex (${GITHUB_SHA})"
           GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
             git push
+
+      - name: Deploy vrtolet
+        run: |
+          echo "${{ secrets.VRT_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          set -euo pipefail
+          cd /tmp/build-vrtolet
+          echo "buda.v-rex.club" > CNAME
+          git clone git@github.com:vrex-club/vrtolet-deploy.git --no-checkout --filter=blob:none
+          mv vrtolet-deploy/.git .
+          rm -rf vrtolet-deploy
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy for vrtolet."
+            exit 0
+          fi
+          git commit -m "Deploy vrtolet (${GITHUB_SHA})"
+          GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
+            git push

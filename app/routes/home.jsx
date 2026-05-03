@@ -1,7 +1,7 @@
 import { Head, LandHeader, Footer } from "../components";
 import { book, certhour, phone, title, WeekdayPriceTable, WeekendPriceTable } from "../config";
 import games from "../games";
-import { assets } from "../brand";
+import { assets, brand } from "../brand";
 
 function Games() {
     let tabs = [];
@@ -414,14 +414,11 @@ export default function Landing() {
                 <div className="info__blockinfo">
                     <div className="info__blockinfoblock fadeInLeft animated wow">
                     <img src="/img/sales.png" alt="Скидка" className="iimg" />
-                    <h3 className="info__blockinfo_ttile mintitle">Акция! Скидка!</h3>
+                    <h3 className="info__blockinfo_ttile mintitle">Скидка для групп!</h3>
                     <div className="info__blockinfo_description description">
-                        Каждый будний день <br /> до 17:00
+                        <br />
                     </div>
-                    <h3 className="info__blockinfo_salas mintitle">- 50р. за час</h3>
-                    <div className="info__blockinfo_salas_description description">
-                        *не действует в каникулы
-                    </div>
+                    <h3 className="info__blockinfo_salas mintitle">Уже в прайс-листе</h3>
                     </div>
                     <div className="info__blockinfoblock fadeInDown animated wow">
                     <img src="/img/salas2.png" alt="Скидка" className="iimg" />
@@ -457,7 +454,7 @@ export default function Landing() {
                     style={{ visibility: "visible", animationName: "fadeInDown" }}
                     >
                     <div className="beforetitle">Окунись</div>
-                    Окунись в другую реальность <span>забронируй время игры</span>
+                    Клуб на {brand == "vrex" ? "Петергофском" : "Будапештской"} <span>забронируй время игры</span>
                     </h2>
                     <div className="section__union" id="gobooking">
                     <div
