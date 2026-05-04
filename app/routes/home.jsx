@@ -451,12 +451,12 @@ export default function Landing() {
                 <div className="section__header">
                     <h2
                     className="booking__about fadeInDown  wow animated"
-                    style={{ visibility: "visible", animationName: "fadeInDown" }}
+                    style={{ visibility: "visible", animationName: "fadeInDown" }} id="gobooking"
                     >
                     <div className="beforetitle">Окунись</div>
                     Клуб на {brand == "vrex" ? "Петергофском" : "Будапештской"} <span>забронируй время игры</span>
                     </h2>
-                    <div className="section__union" id="gobooking">
+                    <div className="section__union">
                     <div
                         className="section__description fadeInDown  wow animated"
                         style={{ visibility: "visible", animationName: "fadeInDown" }}
