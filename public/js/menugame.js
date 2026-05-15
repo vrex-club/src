@@ -1,11 +1,18 @@
 function allGame(query) {
     const btn = document.querySelector(`.${query}`);
     const blockGame = document.querySelector(`.${query}__block`);
+    let isMouseOver = false;
     btn.addEventListener("mouseover", () => {
+        isMouseOver = true;
         blockGame.style.display = 'block';
     });
     btn.addEventListener('mouseleave', () => {
-        blockGame.style.display = 'none';
+        isMouseOver = false;
+        setTimeout(() => {
+            if (!isMouseOver) {
+                blockGame.style.display = 'none';
+            }
+        }, 100);
     });
 
 }
